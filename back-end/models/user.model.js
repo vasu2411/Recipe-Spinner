@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
     name: {type: String, required: true, max: 100},
-    Test: {type: Number, required: true},
+    last-name: {type: Number, required: true},
 });
 
 
