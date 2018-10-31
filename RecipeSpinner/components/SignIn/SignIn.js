@@ -8,8 +8,13 @@ class SignIn extends React.Component {
 static navigationOptions={
 header:null
 }
+
 onEmailChange(text) {
 this.props.emailChanged(text);
+}
+
+moveToForgotPassword(){
+this.props.navigation.navigate('ForgotPassword')
 }
 
 render() {
@@ -41,7 +46,7 @@ return (
     </TouchableOpacity>
 
     <View style={styles.footerForgotPassword}>
-      <Text style={{color:'grey',fontSize:15}}>Forgot your Password?</Text>
+      <Text style={{color:'grey',fontSize:15}} onPress={()=> this.moveToForgotPassword()}>Forgot your Password?</Text>
     </View>
   </View>
 </KeyboardAvoidingView>
