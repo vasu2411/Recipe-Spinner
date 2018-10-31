@@ -20,10 +20,11 @@ marginTop:20
 ImageStyle: {
 padding: 10,
 margin: 5,
-height: 25,
-width: 25,
+height: 15,
+width: 15,
 resizeMode : 'stretch',
-alignItems: 'center'
+alignItems: 'center',
+marginLeft: 10
 },
 signInScreenButton:{
 marginRight:20,
