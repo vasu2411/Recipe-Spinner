@@ -17,6 +17,10 @@ moveToForgotPassword(){
 this.props.navigation.navigate('ForgotPassword')
 }
 
+moveToHome(){
+this.props.navigation.navigate('Home')
+}
+
 render() {
 return (
 <KeyboardAvoidingView style={styles.container }>
@@ -41,7 +45,7 @@ return (
       />
     </View>
 
-    <TouchableOpacity style={styles.signInScreenButton} underlayColor='#fff' onPress={()=>this.moveToSignIn()}>
+    <TouchableOpacity style={styles.signInScreenButton} underlayColor='#fff'  onPress={()=> this.moveToHome()}>
       <Text style={styles.signInText}>Sign In</Text>
     </TouchableOpacity>
 

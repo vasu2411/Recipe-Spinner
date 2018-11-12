@@ -12,6 +12,10 @@ header:null
 moveToLogin(){
 this.props.navigation.navigate('Login')
 }
+   componentWillMount(){
+    debugger;
+console.log("welcome to sign")
+   }
 
 render() {
 return (

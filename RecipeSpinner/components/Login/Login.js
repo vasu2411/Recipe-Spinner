@@ -11,6 +11,9 @@ import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color'
 moveToSignIn(){
        this.props.navigation.navigate('SignIn')
    }
+   moveToSignUp(){
+       this.props.navigation.navigate('SignUp')
+   }
    
   render() {
     return (
@@ -23,7 +26,9 @@ moveToSignIn(){
            onPress={()=> this.moveToSignIn()}>
           <Text style={styles.loginText}>Sign In With Email</Text>
  </TouchableOpacity>
- <View style={styles.footer}><Text style={{ color: 'grey'}}> Don't have an account? Sign Up</Text></View>
+ <View style={styles.footer}>
+ <Text style={{ color: 'grey'}} onPress={()=> this.moveToSignUp()}>Do not have an account? Sign Up</Text>
+ </View>
     </View>
           </View>
 
