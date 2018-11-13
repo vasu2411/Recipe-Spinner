@@ -22,6 +22,6 @@ export default StyleSheet.create({
       paddingRight : 10
   },
   footer:{
-    position: 'absolute', marginBottom:20, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'
+  flexDirection: 'row',position: 'absolute', marginBottom:20, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'
   }
 })

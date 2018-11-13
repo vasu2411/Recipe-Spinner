@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity,Image,Keyboard} from 'react-native';
+import { Text, View, TextInput,StyleSheet,TouchableOpacity,Image,Keyboard} from 'react-native';
 import styles from './SignUpStyle';
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color';
-import {FIRST_NAME_ERROR ,LAST_NAME_ERROR,EMAIL_ERROR , PASSWORD_ERROR ,PASSWORD_LENGTH_ERROR,PASSWORD_MATCH_ERROR , PASSWORD_CONFIRM_ERROR} from '../Utility/String';
+import  Api from '../Utility/Api';
+import * as String from '../Utility/String';
 import Toast, {DURATION} from 'react-native-easy-toast';
-
+import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
   class SignUp extends React.Component {
 
     constructor(){
@@ -14,36 +15,43 @@ import Toast, {DURATION} from 'react-native-easy-toast';
     }
   }
 
-   static navigationOptions={
-     header:null
-   }
+  static navigationOptions = ({ navigation }) => {
+   return {
+  header:null
+   };
+ };
 
    validate(){
-          console.log(this.fields)
     Keyboard.dismiss();
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
     let msg ='';
      if(!this.fields.firstName){
-       msg = FIRST_NAME_ERROR
+       msg = String.FIRST_NAME_ERROR
      }else if(!this.fields.lastName){
-       msg =LAST_NAME_ERROR
+       msg = String.LAST_NAME_ERROR
      }else if(!this.fields.email){
-       msg = EMAIL_ERROR
+       msg = String.EMAIL_ERROR
      }else if(!this.fields.email.match(reg)){
-       msg = EMAIL_ERROR
+       msg = String.EMAIL_ERROR
      }else if(!this.fields.password){
-       msg = PASSWORD_ERROR
+       msg = String.PASSWORD_ERROR
      }else if(this.fields.password.length<6){
-       msg = PASSWORD_LENGTH_ERROR
+       msg = String.PASSWORD_LENGTH_ERROR
      }else if(this.fields.password !== this.fields.confirmPassword){
-       msg = PASSWORD_MATCH_ERROR
+       msg = String.PASSWORD_MATCH_ERROR
+     }else{
+       if(msg){
+         this.refs.toast.show("if",2000);
+    //    this.refs.toast.show(msg,2000);
+       }else{
+         this.refs.toast.show("else",2000);
+        // this.refs.toast.show(Api.SignUp(this.fields),2000);
+       }
      }
-   if(msg){
-     console.log("fdfdfd "+msg)
-    this.refs.toast.show(msg,2000);
-   }
-   console.log(msg)
-   }
+  //   Api.SignUp(this.fields)
+  //  this.refs.toast.show(this.fields);
+  //  this.refs.toast.show(Api.SignUp(this.fields).toString(),2000);
+ }
 
 moveToSignIn(){
        this.props.navigation.navigate('ForgotPassword')
@@ -51,28 +59,42 @@ moveToSignIn(){
 
   render() {
     return (
-      <View style={styles.container}>
+
+      <Container style={styles.container}>
+      <Header style={{backgroundColor: COLOR_PRIMARY}}>
+
+        <Left>
+        <Button transparent>
+          <Icon name='arrow-back' />
+        </Button>
+        </Left>
+        <Body>
+          <Title>Register</Title>
+        </Body>
+        <Right>
+        </Right>
+      </Header>
         <View style={styles.SectionStyle}>
-          <Image source={require('../../assets/download.jpg')} style={styles.ImageStyle} />
+          <Image source={require('../../assets/ic_first_name.png')} style={styles.ImageStyle} />
           <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="First Name" underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.firstName=text}/>
         </View>
         <View style={styles.SectionStyle}>
-          <Image source={require('./download.jpg')} style={styles.ImageStyle} />
+          <Image source={require('../../assets/ic_first_name.png')} style={styles.ImageStyle} />
           <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Last Name" underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.lastName=text}/>
         </View>
 
         <View style={styles.SectionStyle}>
-          <Image source={require('./download.jpg' )} style={styles.ImageStyle} />
+          <Image source={require('../../assets/ic_email.png' )} style={styles.ImageStyle} />
           <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Email" underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.email=text}/>
         </View>
 
         <View style={styles.SectionStyle }>
-          <Image source={require('./download.jpg' )} style={styles.ImageStyle} />
+          <Image source={require('../../assets/ic_password.png' )} style={styles.ImageStyle} />
           <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.password=text}/>
         </View>
 
         <View style={styles.SectionStyle }>
-          <Image source={require('./download.jpg' )} style={styles.ImageStyle} />
+          <Image source={require('../../assets/ic_password.png' )} style={styles.ImageStyle} />
           <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Confirm Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.confirmPassword=text}/>
         </View>
 
@@ -80,17 +102,18 @@ moveToSignIn(){
       style={styles.signInButton}
       underlayColor='#fff'>
         <Text style={styles.signInText}> Send </Text>
-                <Toast
-                    ref="toast"
-                    style={{backgroundColor:COLOR_SECONDARY}}
-                    position='top'
-                    positionValue={200}
-                    opacity={0.8}
-                    textStyle={{color:'white'}}
-                />
-        </TouchableOpacity>
 
-      </View>
+        </TouchableOpacity>
+        <Toast
+            ref="toast"
+            style={{backgroundColor:COLOR_SECONDARY,marginBottom:25}}
+            position='bottom'
+            positionValue={200}
+            opacity={0.8}
+            textStyle={{color:'white'}}
+        />
+
+      </Container>
 
     );
   }
