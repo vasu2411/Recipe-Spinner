@@ -1,1 +1,8 @@
 export const APP_NAME = 'Recipe Spinner'
+export const FIRST_NAME_ERROR = 'Enter valid first name.'
+export const LAST_NAME_ERROR = 'Enter valid last name.'
+export const EMAIL_ERROR = 'Enter valid email address.'
+export const PASSWORD_ERROR = 'Enter valid password.'
+export const PASSWORD_LENGTH_ERROR = 'Password lenght must be more then 6.'
+export const PASSWORD_MATCH_ERROR = 'Password  must be same as confirm password.'
+export const PASSWORD_CONFIRM_ERROR = 'Enter valid confirm password. '

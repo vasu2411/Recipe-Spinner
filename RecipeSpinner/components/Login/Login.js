@@ -7,14 +7,14 @@ import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color'
    static navigationOptions={
      header:null
    }
-   
+
 moveToSignIn(){
        this.props.navigation.navigate('SignIn')
    }
    moveToSignUp(){
        this.props.navigation.navigate('SignUp')
    }
-   
+
   render() {
     return (
       <View style={styles.container}>
@@ -39,6 +39,3 @@ moveToSignIn(){
 
 
 export default Login
-
-
-
