@@ -1,6 +1,6 @@
 var Api = {
   SignUp(data){
-    return fetch('https://reqres.in/api/users',{
+    return fetch('http://192.168.0.10:1337/signUp',{
       method: 'POST',
       headers: {
        Accept: 'application/json',

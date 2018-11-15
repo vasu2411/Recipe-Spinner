@@ -77,7 +77,7 @@ openDetailActivity(recipe){
             style={{ backgroundColor: '#5067FF', marginBottom:50, }}
             position="bottomRight"
             onPress={() => this.props.navigation.navigate('Profile')}>
-            <Icon name="share" />
+            <Icon name="add" />
           </Fab>
       	</Container>
 

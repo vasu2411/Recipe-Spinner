@@ -39,16 +39,25 @@ import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
        msg = String.PASSWORD_LENGTH_ERROR
      }else if(this.fields.password !== this.fields.confirmPassword){
        msg = String.PASSWORD_MATCH_ERROR
-     }else{
+     }
        if(msg){
-         this.refs.toast.show("if",2000);
+         this.refs.toast.show(msg,2000);
     //    this.refs.toast.show(msg,2000);
        }else{
-         this.refs.toast.show("else",2000);
+         let respose = Api.SignUp(this.fields)
+         console.log(response.status)
+         console.log(response)
+         if(respose.status == 200){
+          this.props.navigation.navigate('Home')
+         }
+         else{
+          this.refs.toast.show(response.message,2000)
+         }
+         console.log(msg)
         // this.refs.toast.show(Api.SignUp(this.fields),2000);
        }
-     }
-     this.refs.toast.show(msg,2000);
+     
+     
   //   Api.SignUp(this.fields)
   //  this.refs.toast.show(this.fields);
   //  this.refs.toast.show(Api.SignUp(this.fields).toString(),2000);

@@ -16,7 +16,7 @@ class SignIn extends React.Component {
 
 static navigationOptions = {
   title: 'Sign In',
-  headerStyle: { backgroundColor: COLOR_PRIMARY,shadowColor: '#000',
+  headerStyle: { backgroundColor: COLOR_PRIMARY,shadowColor: COLOR_PRIMARY,
   shadowOffset: { width: 0, height: 0 },
   shadowOpacity: 0,
   elevation: 0,

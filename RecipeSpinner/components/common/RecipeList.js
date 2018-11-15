@@ -2,10 +2,11 @@ import React,{Component} from 'react';
 import {View,Text,Image,TouchableOpacity} from 'react-native';
 import Card from './CardSection'
 import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color';
+import { withNavigation } from 'react-navigation'; 
 
 const RecipeList= (props) =>{
   return(
-    <TouchableOpacity onPress={()=>console.log("456123jakxajkxjkk")}>
+    <TouchableOpacity onPress={()=>props.navigation.navigate('RecipeDetail')}>
     <Card>
     <View style={{width:'100%'}} >
     <Image style= {{
@@ -27,6 +28,5 @@ const RecipeList= (props) =>{
     </Card>
     </TouchableOpacity>
   );
-};
-
-export default RecipeList;
+};;
+export default withNavigation(RecipeList);

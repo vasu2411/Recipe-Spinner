@@ -5,7 +5,13 @@ import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
   class RecipeDetail extends React.Component {
 
    static navigationOptions={
-     header:null
+  title: '',
+  headerStyle: { backgroundColor: 'transparent',shadowColor: '#000',
+  shadowOffset: { width: 0, height: 0 },
+  shadowOpacity: 0,
+  elevation: 0,
+  },
+  headerTintColor: COLOR_WHITE,
    }
 
    moveToSignIn(){
