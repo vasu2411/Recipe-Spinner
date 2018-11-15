@@ -15,11 +15,11 @@ import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
     }
   }
 
-  static navigationOptions = ({ navigation }) => {
-   return {
-  header:null
-   };
- };
+  static navigationOptions = {
+    title: 'Sign up',
+    headerStyle: { backgroundColor: COLOR_PRIMARY,textColor: COLOR_WHITE},
+    headerTintColor: COLOR_WHITE,
+  };
 
    validate(){
     Keyboard.dismiss();
@@ -48,6 +48,7 @@ import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
         // this.refs.toast.show(Api.SignUp(this.fields),2000);
        }
      }
+     this.refs.toast.show(msg,2000);
   //   Api.SignUp(this.fields)
   //  this.refs.toast.show(this.fields);
   //  this.refs.toast.show(Api.SignUp(this.fields).toString(),2000);
@@ -61,19 +62,6 @@ moveToSignIn(){
     return (
 
       <Container style={styles.container}>
-      <Header style={{backgroundColor: COLOR_PRIMARY}}>
-
-        <Left>
-        <Button transparent>
-          <Icon name='arrow-back' />
-        </Button>
-        </Left>
-        <Body>
-          <Title>Register</Title>
-        </Body>
-        <Right>
-        </Right>
-      </Header>
         <View style={styles.SectionStyle}>
           <Image source={require('../../assets/ic_first_name.png')} style={styles.ImageStyle} />
           <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="First Name" underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.firstName=text}/>
@@ -106,12 +94,11 @@ moveToSignIn(){
         </TouchableOpacity>
         <Toast
             ref="toast"
-            style={{backgroundColor:COLOR_SECONDARY,marginBottom:25}}
+            style={{backgroundColor:COLOR_SECONDARY,bottom:40}}
             position='bottom'
-            positionValue={200}
+            positionValue={50}
             opacity={0.8}
-            textStyle={{color:'white'}}
-        />
+            textStyle={{color:'white'}}/>
 
       </Container>
 

@@ -6,6 +6,7 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import Home from './components/Home/Home';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 
 // or any pure javascript modules available in npm
 import { createStackNavigator ,DrawerNavigator } from 'react-navigation';
@@ -35,4 +36,7 @@ export default createStackNavigator({
   Home: {
     screen: Home
   },
+	RecipeDetail:{
+		screen: RecipeDetail
+	}
 });
