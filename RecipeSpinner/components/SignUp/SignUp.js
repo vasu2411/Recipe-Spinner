@@ -45,9 +45,8 @@ import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
     //    this.refs.toast.show(msg,2000);
        }else{
          Api.SignUp(this.fields).then(response=>{
-console.warn(response)
              if(response.status == 200){
-          this.props.navigation.navigate('Home')
+          this.props.navigation.navigate('SignIn')
          }
          else{
           this.refs.toast.show(response.message,2000)
@@ -99,7 +98,7 @@ moveToSignIn(){
         <TouchableOpacity onPress={()=>this.validate()}
       style={styles.signInButton}
       underlayColor='#fff'>
-        <Text style={styles.signInText}> Send </Text>
+        <Text style={styles.signInText}> Sign up </Text>
 
         </TouchableOpacity>
         <Toast

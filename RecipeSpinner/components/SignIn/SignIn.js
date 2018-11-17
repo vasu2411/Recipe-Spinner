@@ -46,7 +46,20 @@ validate(){
       this.refs.toast.show(msg,2000);
  //    this.refs.toast.show(msg,2000);
     }
-    this.moveToHome()
+    else{
+         Api.Login(this.fields).then(response=>{
+             if(response.status == 200){
+          this.moveToHome()
+         }
+         else{
+          this.refs.toast.show(response.message,2000)
+         }
+       })
+        
+      
+        // this.refs.toast.show(Api.SignUp(this.fields),2000);
+       }
+    
   }
 
 
