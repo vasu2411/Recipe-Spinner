@@ -5,7 +5,7 @@ import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color'
 import {APP_NAME} from '../Utility/String'
 import RecipeList from '../common/RecipeList';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
-
+import { createStackNavigator ,DrawerNavigator } from 'react-navigation';
   class Home extends React.Component {
 
    static navigationOptions={
@@ -55,7 +55,7 @@ openDetailActivity(recipe){
       		<Header>
       			<Left>
       				<Button transparent>
-      					<Icon name="menu"/>
+      					<Icon name="menu" onPress={()=>this.props.navigation.toggleDrawer()}/>
       				</Button>
       			</Left>
       			<Body>
@@ -89,7 +89,7 @@ openDetailActivity(recipe){
       		<Header>
       			<Left>
       				<Button transparent>
-      					<Icon name="menu"/>
+      					<Icon name="menu" onPress={()=>this.props.navigation.toggleDrawer()}/>
       				</Button>
       			</Left>
       			<Body>

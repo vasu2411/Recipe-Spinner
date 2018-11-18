@@ -12,12 +12,13 @@ import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 import { createStackNavigator ,DrawerNavigator } from 'react-navigation';
 
 export const drawer =  DrawerNavigator({
-	ForgotPassword: {
-    	screen: ForgotPassword
-  	},
+
   	Home: {
     	screen: Home
-  	}
+  	},
+		ForgotPassword: {
+		    	screen: ForgotPassword
+		  	}
 });
 
 export default createStackNavigator({
@@ -34,9 +35,9 @@ export default createStackNavigator({
     screen: ForgotPassword
   },
   Home: {
-    screen: Home
+    screen: drawer
   },
 	RecipeDetail:{
 		screen: RecipeDetail
 	}
-});
+},{headerMode:'none'});

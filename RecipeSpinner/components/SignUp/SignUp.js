@@ -44,16 +44,14 @@ import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
          this.refs.toast.show(msg,2000);
     //    this.refs.toast.show(msg,2000);
        }else{
-         let respose = Api.SignUp(this.fields)
-         console.log(response.status)
-         console.log(response)
-         if(respose.status == 200){
+         Api.SignUp(this.fields).then((response)=>{
+		   if(response.status == 200){
           this.props.navigation.navigate('Home')
          }
          else{
           this.refs.toast.show(response.message,2000)
-         }
-         console.log(msg)
+         }})
+    
         // this.refs.toast.show(Api.SignUp(this.fields),2000);
        }
      
