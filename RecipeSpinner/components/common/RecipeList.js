@@ -2,13 +2,20 @@ import React,{Component} from 'react';
 import {View,Text,Image,TouchableOpacity} from 'react-native';
 import Card from './CardSection'
 import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color';
-import { withNavigation } from 'react-navigation'; 
+import { withNavigation } from 'react-navigation';
+import HeartButton from '../Home/HeartButton';
 
 const RecipeList= (props) =>{
   return(
     <TouchableOpacity onPress={()=>props.navigation.navigate('RecipeDetail')}>
     <Card>
     <View style={{width:'100%'}} >
+      <View style={{position: 'absolute',
+            right: 12,
+            top: 7,
+            zIndex: 2}}>
+            <HeartButton />
+        </View>
     <Image style= {{
                     height: 200,
                     width: '100%',

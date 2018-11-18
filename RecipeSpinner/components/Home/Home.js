@@ -4,9 +4,11 @@ import styles from './HomeStyle';
 import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color'
 import {APP_NAME} from '../Utility/String'
 import RecipeList from '../common/RecipeList';
+import DrawerHeader from '../common/DrawerHeader';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
 import { createStackNavigator ,DrawerNavigator } from 'react-navigation';
-  class Home extends React.Component {
+
+class Home extends React.Component {
 
    static navigationOptions={
      header:null
@@ -51,21 +53,9 @@ openDetailActivity(recipe){
   render(){
 		if (this.state.isLoading){
       return(
-      	<Container>
-      		<Header>
-      			<Left>
-      				<Button transparent>
-      					<Icon name="menu" onPress={()=>this.props.navigation.toggleDrawer()}/>
-      				</Button>
-      			</Left>
-      			<Body>
-      				<Title>{APP_NAME}</Title>
-      			</Body>
-      			<Right>
-      			</Right>
-      		</Header>
-      		<Content>
-
+        <Container>
+        <DrawerHeader title={APP_NAME}/>
+        <Content>
         <ScrollView>
         {this.renderRecipeList()}
         </ScrollView>
@@ -85,21 +75,9 @@ openDetailActivity(recipe){
 		}
 		else{
 			return(
-      	<Container>
-      		<Header>
-      			<Left>
-      				<Button transparent>
-      					<Icon name="menu" onPress={()=>this.props.navigation.toggleDrawer()}/>
-      				</Button>
-      			</Left>
-      			<Body>
-      				<Title>{APP_NAME}</Title>
-      			</Body>
-      			<Right>
-      			</Right>
-      		</Header>
-      		<Content>
-
+        <Container>
+        <DrawerHeader />
+        <Content>
 					<ActivityIndicator size="large"    color ={COLOR_SECONDARY}  style={{
 	          position: 'absolute' ,
 	          left:0,
