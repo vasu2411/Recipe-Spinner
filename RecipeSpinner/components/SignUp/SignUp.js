@@ -44,18 +44,19 @@ import {Container,Icon,Header,Left,Right,Body,Title,Button} from 'native-base'
          this.refs.toast.show(msg,2000);
     //    this.refs.toast.show(msg,2000);
        }else{
-         Api.SignUp(this.fields).then((response)=>{
-		   if(response.status == 200){
+
+         Api.SignUp(this.fields).then(response=>{
+             if(response.status == 200){
           this.props.navigation.navigate('Home')
          }
          else{
           this.refs.toast.show(response.message,2000)
-         }})
-    
+         }
+       })
         // this.refs.toast.show(Api.SignUp(this.fields),2000);
        }
-     
-     
+
+
   //   Api.SignUp(this.fields)
   //  this.refs.toast.show(this.fields);
   //  this.refs.toast.show(Api.SignUp(this.fields).toString(),2000);
@@ -96,7 +97,7 @@ moveToSignIn(){
         <TouchableOpacity onPress={()=>this.validate()}
       style={styles.signInButton}
       underlayColor='#fff'>
-        <Text style={styles.signInText}> Send </Text>
+        <Text style={styles.signInText}> Sign up </Text>
 
         </TouchableOpacity>
         <Toast
