@@ -3,9 +3,12 @@ import { Text, View, StyleSheet,Image} from 'react-native';
 import {Content,Icon,Left,Header,Container,Button,Body,Title,Right} from "native-base"
 import Home from '../Home/Home';
 import MyFridge from '../MyFridge/MyFridge';
+import MyRecipe from '../MyRecipe/MyRecipe';
+import Favourites from '../Favourites/Favourites';
+import Settings from '../Settings/Settings'
 import {COLOR_PRIMARY,COLOR_SECONDARY} from '../Utility/color';
 import {DrawerNavigator,DrawerItems } from 'react-navigation';
-import {MY_FRIDGE} from '../Utility/String'
+import {MY_FRIDGE,MY_RECIPE,FAVOURITES,SETTINGS} from '../Utility/String'
 
 const CustomDrawerContentComponent = (props) => (
   <Container>
@@ -48,7 +51,43 @@ const drawer =  DrawerNavigator({
                     />
                   ),
         }
-		 }
+		 },
+     MyRecipe: {
+          screen: MyRecipe,
+          navigationOptions: {
+            drawerLabel: MY_RECIPE,
+                 drawerIcon: ({tintColor}) => (
+                    <Image
+                      source={require('../../assets/ic_bank.png')}
+                      style={[styles.icon,{tintColor: tintColor}]}
+                    />
+                  ),
+        }
+     },
+     Favourites: {
+          screen: Favourites,
+          navigationOptions: {
+            drawerLabel: FAVOURITES,
+                 drawerIcon: ({tintColor}) => (
+                    <Image
+                      source={require('../../assets/ic_bank.png')}
+                      style={[styles.icon,{tintColor: tintColor}]}
+                    />
+                  ),
+        }
+     },
+     Settings: {
+          screen: Settings,
+          navigationOptions: {
+            drawerLabel: SETTINGS,
+                 drawerIcon: ({tintColor}) => (
+                    <Image
+                      source={require('../../assets/ic_settings.png')}
+                      style={[styles.icon,{tintColor: tintColor}]}
+                    />
+                  ),
+        }
+     }
 },{
 	initialRouteName: 'Home',
 	 contentOptions: {
