@@ -6,35 +6,103 @@ import styles from './MyFridgeStyle';
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
 import DrawerHeader from '../common/DrawerHeader';
 import { TagSelect } from 'react-native-tag-select';
+import Accordion from 'react-native-collapsible/Accordion';
+    const data = {
+  "fruits" : [
+    {
+      "id":1,
+      "label" : "Apple",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
+      "price" : 35
+    }
+  ],
+
+  "vegetables" : [
+    {
+      "id":6,
+      "label" : "Tomato",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
+      "price" : 35
+    }
+  ],  "Grocery" : [
+    {
+      "id":5,
+      "label" : "Tomato",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
+      "price" : 35
+    }
+  ]
+}
+
+const SECTIONS = [];
+Object.keys(data).forEach(function(key) {
+var tifOptions = {}
+    tifOptions.title =key; 
+    tifOptions.content =data[key]; 
+    SECTIONS.push(tifOptions)
+})
 
 class MyFridge extends React.Component {
    static navigationOptions={
      header:null
    }
 
-  render() {
-	const data = [
-      { id: 1, label: 'Money' },
-      { id: 2, label: 'Credit card' },
-      { id: 3, label: 'Debit card' },
-      { id: 4, label: 'Online payment' },
-      { id: 5, label: 'Bitcoin' },
-    ];
+state = {
+    activeSections: [],
+    value:data
+  };
+
+  _renderHeader = section => {
     return (
-      <Container>
-      <DrawerHeader title={MY_FRIDGE}/>
-        <Content>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>{section.title}</Text>
+      </View>
+    );
+  };
+
+  _renderContent = section => {
+    const {checked}=this.state;
+    return (
           <TagSelect
-          data={data}
-          max={3}
+
+         // value = {this.state.value[section.title]}
+
+          data={section.content}
           ref={(tag) => {
             this.tag = tag;
           }}
-          onMaxError={() => {
-            Alert.alert('Ops', 'Max reached');
+          onItemPress = {(tag)=>{
+            this.selecteItem(tag)
           }}
         />
-        </Content>
+    );
+  };
+ 
+  _updateSections = activeSections => {
+    this.setState({ activeSections });
+  };
+
+  render() {
+    //console.log(this.tag);
+    return (
+      <Container>
+      <DrawerHeader title={MY_FRIDGE}/>
+      <Accordion 
+        sections={SECTIONS}
+        activeSections={this.state.activeSections}
+        renderSectionTitle={this._renderSectionTitle}
+        renderHeader={this._renderHeader}
+        renderContent={this._renderContent}
+        onChange={this._updateSections}
+      />
+      <Content>
+      <Button
+              title="Add"
+              onPress={() => {
+                this.Test(this.tag.itemsSelected)
+              }}
+            />
+      </Content>
       </Container>
     );
   }

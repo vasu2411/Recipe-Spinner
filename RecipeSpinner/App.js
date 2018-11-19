@@ -13,6 +13,7 @@ import StaticPage from './components/StaticPage/StaticPage'
 import { createStackNavigator} from 'react-navigation';
 
 export default createStackNavigator({
+
 	Splash:{
 		screen: Splash
 	},
