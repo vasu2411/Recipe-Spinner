@@ -58,7 +58,7 @@ const drawer =  DrawerNavigator({
             drawerLabel: MY_RECIPE,
                  drawerIcon: ({tintColor}) => (
                     <Image
-                      source={require('../../assets/ic_bank.png')}
+                      source={require('../../assets/myRecipe.png')}
                       style={[styles.icon,{tintColor: tintColor}]}
                     />
                   ),
@@ -70,7 +70,7 @@ const drawer =  DrawerNavigator({
             drawerLabel: FAVOURITES,
                  drawerIcon: ({tintColor}) => (
                     <Image
-                      source={require('../../assets/ic_bank.png')}
+                      source={require('../../assets/favourites.png')}
                       style={[styles.icon,{tintColor: tintColor}]}
                     />
                   ),

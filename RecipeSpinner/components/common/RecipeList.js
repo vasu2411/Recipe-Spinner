@@ -35,5 +35,5 @@ const RecipeList= (props) =>{
     </Card>
     </TouchableOpacity>
   );
-};
+};;
 export default withNavigation(RecipeList);

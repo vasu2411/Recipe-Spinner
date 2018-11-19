@@ -11,7 +11,12 @@ export const MY_RECIPE = 'My Recipes'
 export const FAVOURITES = 'Favourites'
 export const HOME = 'Home'
 export const SETTINGS = 'Settings'
-
+export const ABOUT_US = 'About Us'
+export const MY_PROFILE = 'My Profile'
+export const PRIVACY_POLICY = 'Privacy Policy'
+export const TERMS_AND_CONDITION = 'Terms & conditions'
+export const CHANGE_PASSWORD = 'Change Password'
+export const LOGOUT = 'Logout'
 export const ADD_TO_FAVOURITE = 'Add to Favourite'
 
 export const EMPTY_FAVOURITE_LIST = 'There are no items in your Favouritelist.'
