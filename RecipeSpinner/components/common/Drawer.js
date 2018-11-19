@@ -17,7 +17,7 @@ const CustomDrawerContentComponent = (props) => (
         <Image
           style={styles.drawerImage}
           source={require('../../assets/ic_first_name.png')} />
-          <Text>Uttam Solanki</Text>
+          <Text>Username</Text>
       </Body>
     </Header>
     <Content>
