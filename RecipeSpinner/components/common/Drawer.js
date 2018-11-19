@@ -46,7 +46,7 @@ const drawer =  DrawerNavigator({
             drawerLabel: MY_FRIDGE,
                  drawerIcon: ({tintColor}) => (
                     <Image
-                      source={require('../../assets/ic_bank.png')}
+                      source={require('../../assets/refrigerator.png')}
                       style={[styles.icon,{tintColor: tintColor}]}
                     />
                   ),

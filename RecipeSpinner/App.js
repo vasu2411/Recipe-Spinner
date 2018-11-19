@@ -12,9 +12,7 @@ import Splash from './components/Splash/Splash'
 import { createStackNavigator} from 'react-navigation';
 
 export default createStackNavigator({
-	Splash:{
-		screen: Splash
-	},
+
 	Home: {
 		screen: Drawer,
 		navigationOptions: {
