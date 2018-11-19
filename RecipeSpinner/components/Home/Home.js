@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, TextInput,StyleSheet,Image,ScrollView,KeyboardAvoidingView,ActivityIndicator } from 'react-native';
 import styles from './HomeStyle';
 import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color'
-import {APP_NAME} from '../Utility/String'
+import {HOME} from '../Utility/String'
 import RecipeList from '../common/RecipeList';
 import DrawerHeader from '../common/DrawerHeader';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
@@ -54,7 +54,7 @@ openDetailActivity(recipe){
 		if (this.state.isLoading){
       return(
         <Container>
-        <DrawerHeader title={APP_NAME}/>
+        <DrawerHeader title={HOME}/>
         <Content>
         <ScrollView>
         {this.renderRecipeList()}

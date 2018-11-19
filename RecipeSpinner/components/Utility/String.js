@@ -9,6 +9,8 @@ export const PASSWORD_CONFIRM_ERROR = 'Enter valid confirm password. '
 export const MY_FRIDGE = 'My Fridge'
 export const MY_RECIPE = 'My Recipes'
 export const FAVOURITES = 'Favourites'
+export const HOME = 'Home'
+export const SETTINGS = 'Settings'
 
 export const ADD_TO_FAVOURITE = 'Add to Favourite'
 
