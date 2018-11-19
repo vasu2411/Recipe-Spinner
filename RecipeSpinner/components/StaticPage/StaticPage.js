@@ -10,11 +10,10 @@ class StaticPage extends React.Component {
 }
 
   static navigationOptions = {
-    title: 'title' ,
+    title: "Title" ,
     headerStyle: { backgroundColor: COLOR_PRIMARY,textColor: COLOR_WHITE},
     headerTintColor: COLOR_WHITE,
   };
-
 
  render() {
    return (
@@ -26,7 +25,6 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
        </Text>
        </ScrollView>
       </View>
-
    );
  }
 }

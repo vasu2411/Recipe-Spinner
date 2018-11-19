@@ -11,7 +11,7 @@ class CardSettings extends React.Component{
 
   onLogoutClick = (cardTitle) =>{
     if(cardTitle === String.ABOUT_US || cardTitle === String.PRIVACY_POLICY || cardTitle === String.TERMS_AND_CONDITION){
-    this.props.navigation.navigate('StaticPage', { title: cardTitle });
+    this.props.navigation.navigate('StaticPage', { title: "mxjcjjc" });
   }
 else if(cardTitle === String.LOGOUT){
   // Works on both iOS and Android
