@@ -5,6 +5,7 @@ import {COLOR_PRIMARY,COLOR_WHITE} from '../Utility/color'
 import {HOME} from '../Utility/String'
 import RecipeList from '../common/RecipeList';
 import DrawerHeader from '../common/DrawerHeader';
+import  Api from '../Utility/Api';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
 import { createStackNavigator ,DrawerNavigator } from 'react-navigation';
 
@@ -21,11 +22,8 @@ class Home extends React.Component {
 
 
    componentWillMount(){
-      return fetch('https://rallycoding.herokuapp.com/api/music_albums')
-      .then((response) => response.json())
-      .then((responseJson) => {
-
-
+      
+      Api.recipe().then((responseJson) => {
         this.setState({
           recipe: responseJson,
 					isLoading: true,

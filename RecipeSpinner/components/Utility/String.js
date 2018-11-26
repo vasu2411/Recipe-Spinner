@@ -19,4 +19,5 @@ export const CHANGE_PASSWORD = 'Change Password'
 export const LOGOUT = 'Logout'
 export const ADD_TO_FAVOURITE = 'Add to Favourite'
 
+
 export const EMPTY_FAVOURITE_LIST = 'There are no items in your Favouritelist.'

@@ -7,7 +7,7 @@ import HeartButton from '../Home/HeartButton';
 
 const RecipeList= (props) =>{
   return(
-    <TouchableOpacity onPress={()=>props.navigation.navigate('RecipeDetail')}>
+    <TouchableOpacity onPress={()=>props.navigation.navigate('RecipeDetail',{data:props.data})}>
     <Card>
     <View style={{width:'100%'}} >
       <View style={{position: 'absolute',

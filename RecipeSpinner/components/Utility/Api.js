@@ -1,6 +1,8 @@
+const END_POINT = 'http://192.168.0.10:1337/'
+
 var Api = {
   SignUp(data){
-    return fetch('http://192.168.0.10:1337/signUp',{
+    return fetch(END_POINT+'signUp',{
       method: 'POST',
       headers: {
        Accept: 'application/json',
@@ -30,6 +32,17 @@ var Api = {
         .catch((error) => {
           console.error(error);
         });
+  },
+
+  recipe(){
+    return fetch(END_POINT+'getRecipe',{
+      method: 'GET',
+      headers: {
+       Accept: 'application/json',
+       'Content-Type': 'application/json',
+     },
+    }).then((response) => response.json());
   }
+
 }
 export default Api;

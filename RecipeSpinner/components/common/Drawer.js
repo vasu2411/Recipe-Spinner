@@ -6,7 +6,7 @@ import MyFridge from '../MyFridge/MyFridge';
 import MyRecipe from '../MyRecipe/MyRecipe';
 import Favourites from '../Favourites/Favourites';
 import Settings from '../Settings/Settings'
-import {COLOR_PRIMARY,COLOR_SECONDARY} from '../Utility/color';
+import {COLOR_PRIMARY,COLOR_SECONDARY,COLOR_WHITE} from '../Utility/color';
 import {DrawerNavigator,DrawerItems } from 'react-navigation';
 import {MY_FRIDGE,MY_RECIPE,FAVOURITES,SETTINGS} from '../Utility/String'
 
@@ -16,8 +16,8 @@ const CustomDrawerContentComponent = (props) => (
       <Body style={styles.bodyStyle}>
         <Image
           style={styles.drawerImage}
-          source={require('../../assets/ic_first_name.png')} />
-          <Text>Username</Text>
+          source={require('../../assets/ic_user_dummy.png')} />
+          <Text style={{marginTop:5, color:COLOR_WHITE}}>Rafael Nadal</Text>
       </Body>
     </Header>
     <Content>
