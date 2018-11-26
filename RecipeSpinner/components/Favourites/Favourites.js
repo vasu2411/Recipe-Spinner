@@ -5,6 +5,7 @@ import {FAVOURITES} from '../Utility/String'
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
 import DrawerHeader from '../common/DrawerHeader';
 import EmptyView from '../common/EmptyView';
+import {ADD_TO_FAVOURITE,EMPTY_FAVOURITE_LIST} from '../Utility/String'
 
 class Favourites extends React.Component {
    static navigationOptions={
@@ -15,7 +16,7 @@ class Favourites extends React.Component {
     return (
       <Container>
         <DrawerHeader title={FAVOURITES}/>
-        <EmptyView image={require("../../assets/ic_email.png")}/>
+        <EmptyView image={require("../../assets/favourites.png")} buttonText={ADD_TO_FAVOURITE} message={EMPTY_FAVOURITE_LIST}/>
       </Container>
     );
   }

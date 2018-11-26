@@ -9,7 +9,7 @@ import { withNavigation } from 'react-navigation';
 
 class CardSettings extends React.Component{
 
-  onLogoutClick = (cardTitle) =>{
+  onItemClick = (cardTitle) =>{
     if(cardTitle === String.ABOUT_US || cardTitle === String.PRIVACY_POLICY || cardTitle === String.TERMS_AND_CONDITION){
     this.props.navigation.navigate('StaticPage', { title: "mxjcjjc" });
   }
@@ -35,7 +35,7 @@ Alert.alert(
   render(){
     return (
 
-      <TouchableOpacity onPress={()=>this.onLogoutClick(this.props.cardTitle)}>
+      <TouchableOpacity onPress={()=>this.onItemClick(this.props.cardTitle)}>
         <Card style={styles.CardStyle}>
           <CardItem>
             <Image source={this.props.cardImage} style={styles.ImageStyle} />

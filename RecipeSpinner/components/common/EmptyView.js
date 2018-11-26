@@ -8,12 +8,12 @@ const EmptyView= (props) =>{
   return(
      <View style={styles.container}>
           <Image source={props.image}  style={styles.emptyImageStyle}/>
-        <Text style={styles.textStyle}>{String.EMPTY_FAVOURITE_LIST}</Text>
+        <Text style={styles.textStyle}>{props.message}</Text>
         <TouchableOpacity
           style={styles.button}
           underlayColor='#fff'
            onPress={()=> props.navigation.navigate('Home')}>
-          <Text style={styles.buttonText}> {props.image}</Text>
+          <Text style={styles.buttonText}> {props.buttonText}</Text>
         </TouchableOpacity>
       </View>
   );

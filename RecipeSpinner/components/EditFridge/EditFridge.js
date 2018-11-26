@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, TextInput,StyleSheet,TouchableOpacity} from 'react-native';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
 import {MY_FRIDGE} from '../Utility/String'
-import styles from './MyFridgeStyle';
+import styles from './EditFridgeStyle';
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY,COLOR_GREY} from '../Utility/color'
 import DrawerHeader from '../common/DrawerHeader';
 import { TagSelect } from 'react-native-tag-select';
@@ -42,10 +42,17 @@ var tifOptions = {}
     SECTIONS.push(tifOptions)
 })
 
-class MyFridge extends React.Component {
-   static navigationOptions={
-     header:null
-   }
+class EditFridge extends React.Component {
+
+  static navigationOptions = {
+    title: 'Edit',
+    headerStyle: { backgroundColor: COLOR_PRIMARY,shadowColor: '#000',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0,
+    elevation: 0,
+    },
+    headerTintColor: COLOR_WHITE,
+  };
 
 state = {
     activeSections: [],
@@ -87,7 +94,6 @@ state = {
     //console.log(this.tag);
     return (
       <Container>
-      <DrawerHeader title={MY_FRIDGE}/>
       <Accordion
         sections={SECTIONS}
         activeSections={this.state.activeSections}
@@ -109,4 +115,4 @@ state = {
   }
 }
 
-export default MyFridge
+export default EditFridge

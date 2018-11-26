@@ -26,6 +26,9 @@ SubtitleStyle: {
  fontWeight: '600',
  paddingRight: 15,
 },
+play: {
+position: 'absolute',
+},
 DetailStyle: {
  color: COLOR_GREY,
  fontSize: 14,

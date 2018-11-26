@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity,ScrollView,Image} from 'react-native';
+import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity,ScrollView,Image,Linking,TouchableHighlight,StatusBar} from 'react-native';
 import styles from './RecipeDetailStyle';
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
+
   class RecipeDetail extends React.Component {
 
    static navigationOptions={
-  title: '',
-  headerStyle: { backgroundColor: 'transparent',shadowColor: '#000',
+  title: 'Detail',
+  headerStyle: { backgroundColor: COLOR_PRIMARY ,shadowColor: '#000',
   shadowOffset: { width: 0, height: 0 },
   shadowOpacity: 0,
   elevation: 0,
@@ -14,25 +15,29 @@ import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
   headerTintColor: COLOR_WHITE,
    }
 
-   moveToSignIn(){
-     this.props.navigation.navigate('SignIn', {
-            itemId: 85,
-            otherParam: 'Sign In',
-          })
-   }
-   moveToSignUp(){
-       this.props.navigation.navigate('SignUp', {
-              itemId: 86,
-              otherParam: 'Sign Up',
-            })
-   }
 
   render() {
     return (
   <ScrollView>
+  <StatusBar
+     backgroundColor={COLOR_PRIMARY}
+     barStyle="light-content"
+   />
   <View>
-    <Image style={styles.ImageStyle} source={require('../../assets/ic_email.png')} />
-    <Text style={styles.RecipeTitleStyle}>Tomato Pasta (Pasta In Red Sauce)</Text>
+  <TouchableHighlight   onPress={()=>Linking.openURL('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')}>
+        
+        <View  style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+      <Image style={styles.ImageStyle} source={require('../../assets/ic_food.jpg')} />
+ 
+
+      <Image style={styles.play}  source={require('../../assets/ic_play.png')} />
+      
+      </View>
+    </TouchableHighlight>
+    <Text style={styles.RecipeTitleStyle} >Tomato Pasta (Pasta In Red Sauce)</Text>
     <Text style={styles.SubtitleStyle}>Ingredients</Text>
     <Text style={styles.DetailStyle}>
       1½ cups Raw Penne Pasta or Fusilli Pasta,
