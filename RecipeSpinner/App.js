@@ -18,6 +18,10 @@ import { createStackNavigator} from 'react-navigation';
 
 export default createStackNavigator({
 
+
+ Splash:{
+ 	 	screen: Splash
+ 	 },
 	Home: {
 	screen: Drawer,
 	navigationOptions: {
@@ -30,9 +34,6 @@ export default createStackNavigator({
  SignIn: {
 	 screen: SignIn
  },
-Splash:{
-	 	screen: Splash
-	 },
 
 
 
