@@ -10,24 +10,32 @@ import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 import Drawer from './components/common/Drawer';
 import Splash from './components/Splash/Splash'
 import StaticPage from './components/StaticPage/StaticPage'
+import PrivacyPolicy from './components/StaticPage/PrivacyPolicy'
+import TermsAndCondition from './components/StaticPage/TermsAndCondition'
 import EditFridge from './components/EditFridge/EditFridge'
 // or any pure javascript modules available in npm
 import { createStackNavigator} from 'react-navigation';
 
 export default createStackNavigator({
 
-		Home: {
-		screen: Drawer,
-		navigationOptions: {
-		header: null
-			}
+	Home: {
+	screen: Drawer,
+	navigationOptions: {
+	header: null
+		}
 	},
-	 Login: {
-    screen: Login
-  },
-   Splash:{
+	Login: {
+	 screen: Login
+ },
+ SignIn: {
+	 screen: SignIn
+ },
+Splash:{
 	 	screen: Splash
 	 },
+
+
+
 	 StaticPage:{
 	 	screen: StaticPage
 	 },
@@ -35,10 +43,7 @@ export default createStackNavigator({
     ChangePassword: {
      screen: ChangePassword
    },
-   SignIn: {
-     screen: SignIn
-   },
- 
+
   SignUp: {
     screen: SignUp
   },
@@ -50,5 +55,11 @@ export default createStackNavigator({
 	},
 	EditFridge:{
 		screen:EditFridge
+	},
+	PrivacyPolicy:{
+		screen:PrivacyPolicy
+	},
+	TermsAndCondition:{
+		screen:TermsAndCondition
 	},
 });

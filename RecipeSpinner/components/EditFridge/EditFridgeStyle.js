@@ -41,4 +41,13 @@ viewStyle:{
 labelStyle:{
   color: COLOR_WHITE,
 },
+footer:{
+  flexDirection: 'row',position: 'absolute',
+   paddingBottom:15, left: 0, 
+   paddingTop:15,
+   height:60,
+   right: 0, bottom: 0, 
+   justifyContent: 'center', alignItems: 'center',
+   backgroundColor:COLOR_SECONDARY
+  },
 })

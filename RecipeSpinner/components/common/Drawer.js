@@ -17,7 +17,7 @@ const CustomDrawerContentComponent = (props) => (
         <Image
           style={styles.drawerImage}
           source={require('../../assets/ic_user_dummy.png')} />
-          <Text style={{marginTop:5, color:COLOR_WHITE}}>Rafael Nadal</Text>
+          <Text style={{marginTop:5, color:COLOR_WHITE}}>Meet Patel</Text>
       </Body>
     </Header>
     <Content>

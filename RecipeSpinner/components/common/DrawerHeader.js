@@ -6,11 +6,8 @@ import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
 
 const DrawerHeader= (props) =>{
   return(
- <Header style={{backgroundColor:COLOR_PRIMARY}}>
-      <StatusBar
-     backgroundColor='#123456'
-     barStyle="light-content"
-   />
+ <Header style={{backgroundColor:COLOR_PRIMARY}} >
+     
         <Left>
           <Button transparent>
             <Icon name="menu" onPress={()=>props.navigation.toggleDrawer()}/>
@@ -21,6 +18,10 @@ const DrawerHeader= (props) =>{
         </Body>
         <Right>
         </Right>
+         <StatusBar
+     backgroundColor='#123456'
+     barStyle="light-content"
+   />
       </Header>
   );
 };;

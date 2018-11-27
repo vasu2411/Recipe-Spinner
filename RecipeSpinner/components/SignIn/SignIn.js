@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity,Image,KeyboardAvoidingView,Keyboard} from 'react-native';
+import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity,Image,KeyboardAvoidingView,Keyboard, Dimensions} from 'react-native';
 import styles from './SignInStyle';
 import Toast, {DURATION} from 'react-native-easy-toast';
 import  Api from '../Utility/Api';
@@ -55,11 +55,11 @@ validate(){
           this.refs.toast.show(response.message,2000)
          }
        })
-        
-      
+
+
         // this.refs.toast.show(Api.SignUp(this.fields),2000);
        }
-    
+
   }
 
 
@@ -70,7 +70,9 @@ this.props.navigation.navigate('Home')
 render() {
 return (
 <KeyboardAvoidingView style={styles.container }>
-  <View style={{flex:3 , backgroundColor: COLOR_PRIMARY}} />
+  <View style={{flex:3 , backgroundColor: COLOR_PRIMARY, alignItems: 'center', justifyContent: 'center'}}>
+    <Image style={{height:175, width:175}} source={require('../../assets/ic_logo512.png')}/>
+  </View>
   <View style={{ flex:7 , backgroundColor: COLOR_WHITE, paddingTop:30}} >
     <View style={styles.SectionStyle}>
       <Image style={styles.ImageStyle} source={require('./ic_email.png')} />

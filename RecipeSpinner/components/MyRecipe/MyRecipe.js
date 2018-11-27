@@ -4,6 +4,7 @@ import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'na
 import {MY_RECIPE} from '../Utility/String'
 import RecipeList from '../common/RecipeList1';
 import styles from './MyRecipeStyle';
+import  Api from '../Utility/Api';
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
 import DrawerHeader from '../common/DrawerHeader';
 
@@ -18,11 +19,7 @@ class MyRecipe extends React.Component {
   }
   
   componentWillMount(){
-      return fetch('https://rallycoding.herokuapp.com/api/music_albums')
-      .then((response) => response.json())
-      .then((responseJson) => {
-
-
+        Api.recipe().then((responseJson) => {
         this.setState({
           recipe: responseJson,
           isLoading: true,

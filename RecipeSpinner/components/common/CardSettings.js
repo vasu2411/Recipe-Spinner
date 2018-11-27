@@ -10,8 +10,17 @@ import { withNavigation } from 'react-navigation';
 class CardSettings extends React.Component{
 
   onItemClick = (cardTitle) =>{
-    if(cardTitle === String.ABOUT_US || cardTitle === String.PRIVACY_POLICY || cardTitle === String.TERMS_AND_CONDITION){
-    this.props.navigation.navigate('StaticPage', { title: "mxjcjjc" });
+    if(cardTitle === String.ABOUT_US){
+    this.props.navigation.navigate('StaticPage', { title: cardTitle });
+  }
+  else if(cardTitle === String.PRIVACY_POLICY) {
+    this.props.navigation.navigate('PrivacyPolicy', { title: cardTitle });
+  }
+  else if(cardTitle === String.TERMS_AND_CONDITION) {
+    this.props.navigation.navigate('TermsAndCondition', { title: cardTitle });
+  }
+  else if(cardTitle === String.CHANGE_PASSWORD) {
+    this.props.navigation.navigate('ChangePassword', { title: cardTitle });
   }
 else if(cardTitle === String.LOGOUT){
   // Works on both iOS and Android
@@ -20,7 +29,7 @@ Alert.alert(
   'Are you sure you want to logout?',
   [
     {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-    {text: 'OK', onPress: () => console.log('OK Pressed')},
+    {text: 'OK', onPress: () =>  this.props.navigation.navigate('Login')},
   ],
   { cancelable: false }
 )

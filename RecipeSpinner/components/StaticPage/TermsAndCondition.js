@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity,ScrollView} from 'react-native';
 import styles from './StaticPageStyle';
 import {COLOR_WHITE,COLOR_PRIMARY,COLOR_SECONDARY} from '../Utility/color'
-class StaticPage extends React.Component {
+class TermsAndCondition extends React.Component {
 
   constructor(props){
   super(props)
@@ -10,7 +10,7 @@ class StaticPage extends React.Component {
 }
 
   static navigationOptions = {
-    title: "About Us" ,
+    title: "Terms and Conditions" ,
     headerStyle: { backgroundColor: COLOR_PRIMARY,textColor: COLOR_WHITE},
     headerTintColor: COLOR_WHITE,
   };
@@ -29,4 +29,4 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
  }
 }
 
-export default StaticPage
+export default TermsAndCondition

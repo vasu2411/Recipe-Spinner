@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, TextInput,StyleSheet,TouchableOpacity} from 'react-native';
+import { Text, View, TextInput,StyleSheet,TouchableOpacity,ScrollView,StatusBar} from 'react-native';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
 import {MY_FRIDGE} from '../Utility/String'
 import styles from './EditFridgeStyle';
@@ -45,7 +45,7 @@ var tifOptions = {}
 class EditFridge extends React.Component {
 
   static navigationOptions = {
-    title: 'Edit',
+    title: 'Add',
     headerStyle: { backgroundColor: COLOR_PRIMARY,shadowColor: '#000',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0,
@@ -94,6 +94,11 @@ state = {
     //console.log(this.tag);
     return (
       <Container>
+        <StatusBar
+     backgroundColor={COLOR_PRIMARY}
+     barStyle="light-content"
+   />
+        <ScrollView style={{marginBottom:60}}>
       <Accordion
         sections={SECTIONS}
         activeSections={this.state.activeSections}
@@ -102,14 +107,11 @@ state = {
         renderContent={this._renderContent}
         onChange={this._updateSections}
       />
-      <Content>
-      <Button
-              title="Add"
-              onPress={() => {
-                this.Test(this.tag.itemsSelected)
-              }}
-            />
-      </Content>
+      </ScrollView>
+
+       <View style={styles.footer}>
+            <Text style={{ color: COLOR_WHITE ,justifyContent: 'space-around',fontSize:20}}>Save</Text>
+           </View>
       </Container>
     );
   }

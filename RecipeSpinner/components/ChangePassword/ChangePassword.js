@@ -61,20 +61,20 @@ moveToSignIn(){
     return (
 
       <Container style={styles.container}>
-        
+
         <View style={styles.SectionStyle}>
-          <Image source={require('../../assets/ic_email.png' )} style={styles.ImageStyle} />
-          <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Email" underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.email=text}/>
+          <Image source={require('../../assets/ic_password.png' )} style={styles.ImageStyle} />
+          <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Current Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.password=text}/>
         </View>
 
         <View style={styles.SectionStyle }>
           <Image source={require('../../assets/ic_password.png' )} style={styles.ImageStyle} />
-          <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.password=text}/>
+          <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="New Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.password=text}/>
         </View>
 
         <View style={styles.SectionStyle }>
           <Image source={require('../../assets/ic_password.png' )} style={styles.ImageStyle} />
-          <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Confirm Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.confirmPassword=text}/>
+          <TextInput style={{flex:1,color:COLOR_PRIMARY,fontSize:15}} placeholder="Confirm New Password" secureTextEntry={true} underlineColorAndroid="transparent" onChangeText={(text)=>this.fields.confirmPassword=text}/>
         </View>
 
         <TouchableOpacity onPress={()=>this.validate()} style={styles.signInButton} underlayColor='#fff'>

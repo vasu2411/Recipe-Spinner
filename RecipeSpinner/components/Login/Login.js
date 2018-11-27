@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity} from 'react-native';
+import { Text, View, TextInput,StyleSheet,Button,TouchableOpacity, Image, Dimensions} from 'react-native';
 import styles from './LoginStyle';
 import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
   class Login extends React.Component {
@@ -24,7 +24,9 @@ import {COLOR_PRIMARY,COLOR_WHITE,COLOR_SECONDARY} from '../Utility/color'
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flex:7 , backgroundColor: COLOR_PRIMARY}} />
+        <View style={{flex:7 , backgroundColor: COLOR_PRIMARY, alignItems: 'center', justifyContent: 'center'}}>
+          <Image style={{height: Dimensions.get('window').width-100, width: Dimensions.get('window').width-100}} source={require('../../assets/cooking.png')}/>
+        </View>
           <View style={{ flex:2 , backgroundColor: COLOR_WHITE}} >
             <TouchableOpacity
               style={styles.loginScreenButton}

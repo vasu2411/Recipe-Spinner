@@ -53,6 +53,11 @@ openDetailActivity(recipe){
       return(
       
         <Container>
+          <StatusBar
+     backgroundColor={COLOR_PRIMARY}
+     barStyle="light-content"
+   />
+
         <DrawerHeader title={HOME}/>
         
         <Content>

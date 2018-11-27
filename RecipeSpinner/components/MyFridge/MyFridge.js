@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, TextInput,StyleSheet,TouchableOpacity} from 'react-native';
+import { Text, View, TextInput,StyleSheet,TouchableOpacity,ScrollView} from 'react-native';
 import {Container,Content,Icon,Header,Left,Right,Button,Body,Title,Fab} from 'native-base'
 import {MY_FRIDGE} from '../Utility/String'
 import styles from './MyFridgeStyle';
@@ -8,28 +8,113 @@ import DrawerHeader from '../common/DrawerHeader';
 import { TagSelect } from 'react-native-tag-select';
 import Accordion from 'react-native-collapsible/Accordion';
     const data = {
-  "fruits" : [
+  "Fruits" : [
     {
-      "id":1,
-      "label" : "Apple",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
-      "price" : 35
+      "id":11,
+      "label" : "Apple"
+    },
+    {
+      "id":12,
+      "label" : "Avocado"
+    },
+    {
+      "id":13,
+      "label" : "Banana"
+    },
+    {
+      "id":14,
+      "label" : "Bilberry"
+    },
+    {
+      "id":16,
+      "label" : "Blackberry"
+    },
+    {
+      "id":17,
+      "label" : "Blueberry"
+    },
+    {
+      "id":18,
+      "label" : "Cucumber"
+    },
+    {
+      "id":19,
+      "label" : "Grape"
     }
   ],
-
-  "vegetables" : [
+  "Vegetables" : [
     {
-      "id":6,
-      "label" : "Tomato",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
-      "price" : 35
+      "id":21,
+      "label" : "Broccoflower"
+    },{
+      "id":22,
+      "label" : "Carrot"
+    },{
+      "id":23,
+      "label" : "Celery"
+    },{
+      "id":24,
+      "label" : "Cucumber"
+    },{
+      "id":25,
+      "label" : "Garlic"
+    },{
+      "id":26,
+      "label" : "Ginger"
     }
-  ],  "Grocery" : [
+  ],
+  "Dairy" : [
     {
-      "id":5,
-      "label" : "Tomato",
-      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg",
-      "price" : 35
+      "id":31,
+      "label" : "Butter"
+    },{
+      "id":32,
+      "label" : "Milk"
+    },{
+      "id":33,
+      "label" : "Egg"
+    },{
+      "id":34,
+      "label" : "Mozzarella"
+    },{
+      "id":35,
+      "label" : "Cream"
+    },{
+      "id":36,
+      "label" : "Yogurt"
+    }
+  ],
+  "Meats" : [
+    {
+      "id":41,
+      "label" : "Chicken breast"
+    },{
+      "id":42,
+      "label" : "Bacon"
+    },{
+      "id":43,
+      "label" : "Beef steak"
+    },{
+      "id":44,
+      "label" : "Hot dog"
+    },{
+      "id":45,
+      "label" : "Ham"
+    }
+  ],
+  "Oils" : [
+    {
+      "id":51,
+      "label" : "Vegetable oil"
+    },{
+      "id":52,
+      "label" : "Canola oil"
+    },{
+      "id":53,
+      "label" : "Peanut oil"
+    },{
+      "id":54,
+      "label" : "Sunflower oil"
     }
   ]
 }
@@ -88,6 +173,7 @@ state = {
     return (
       <Container>
       <DrawerHeader title={MY_FRIDGE}/>
+      <ScrollView style={{marginBottom:60}}>
       <Accordion
         sections={SECTIONS}
         activeSections={this.state.activeSections}
@@ -96,14 +182,11 @@ state = {
         renderContent={this._renderContent}
         onChange={this._updateSections}
       />
-      <Content>
-      <Button
-              title="Add"
-              onPress={() => {
-                this.Test(this.tag.itemsSelected)
-              }}
-            />
-      </Content>
+      </ScrollView>
+
+       <View style={styles.footer}>
+            <Text style={{ color: COLOR_WHITE ,justifyContent: 'space-around',fontSize:20}} >Save</Text>
+           </View>
       </Container>
     );
   }

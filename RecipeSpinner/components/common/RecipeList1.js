@@ -7,13 +7,14 @@ import HeartButton from '../Home/HeartButton';
 
 const RecipeList= (props) =>{
   return(
-    <TouchableOpacity onPress={()=>props.navigation.navigate('RecipeDetail')}>
+    <TouchableOpacity onPress={()=>props.navigation.navigate('RecipeDetail',{data:props.data})}>
     <Card>
     <View style={{width:'100%'}} >
       <View style={{position: 'absolute',
             right: 12,
             top: 7,
             zIndex: 2}}>
+            <HeartButton />
         </View>
     <Image style= {{
                     height: 200,
@@ -23,21 +24,7 @@ const RecipeList= (props) =>{
                   }}
       source={{uri:props.data.image}}/>
 
-       <TouchableOpacity style={{ height: 30,
-                    width: 30,
-                    position:'absolute',
-                    top:0,
-                    right:0,
-                    backgroundcolor:'#88000000',
-                    margin:10,
-                    padding: 10,
-          }} onPress={()=>{alert("you clicked me")}}>
-          <Image source={require('../../assets/ic_close_round.png')} style={{ height: 30,
-                    width: 30,
-                    position:'absolute',
-                    top:0,
-                    right:0}}/>
-        </TouchableOpacity>
+       
 
     <Text style={{color: COLOR_PRIMARY,
                   fontSize: 16,
